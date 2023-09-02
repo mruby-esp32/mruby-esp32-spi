@@ -114,6 +114,7 @@ mrb_spi_setmode(mrb_state *mrb, mrb_value self) {
   );
 
 #ifdef ESP_PLATFORM
+/* TODO */
 #endif
 
   return self;
@@ -128,6 +129,7 @@ mrb_spi_read(mrb_state *mrb, mrb_value self) {
   ESP_LOGI(TAG, "read(%d)", read_bytes);
 
 #ifdef ESP_PLATFORM
+/* TODO */
 #endif
 
   return self;

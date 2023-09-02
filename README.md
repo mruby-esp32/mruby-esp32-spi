@@ -9,7 +9,7 @@ You need [esp-idf v5.0](https://docs.espressif.com/projects/esp-idf/en/release-v
 Add the line below to your `build_config.rb`:
 
 ```ruby
-  conf.gem :github => 'yuuu/mruby-esp32-spi'
+  conf.gem :github => 'mruby-esp32-api/mruby-esp32-spi'
 ```
 
 ## Examples
@@ -24,10 +24,11 @@ spi.write(0x30, 0x20, 0x00)
 spi.write("\x30\xa2")
 spi.write(0x30)
 
+# NOT IMPLEMENTED
 data = spi.read( 32 )
 
+# NOT IMPLEMENTED
 s = spi.transfer([0x30, 0x20], 1)
-
 ```
 
 ## LICENSE

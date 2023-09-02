@@ -41,30 +41,18 @@ class SPI
   end
 
   def read(read_bytes)
-    self.read_bytes = read_bytes
-
-    __read(read_bytes)
+    raise not_inplemented_error('SPI#read')
   end
 
   def transfer(outputs, additional_read_bytes = 0)
-    self.outputs =
-      if outputs.is_a?(String)
-        outputs
-      elsif outputs.is_a?(Array)
-        outputs.pack("c*")
-      elsif outputs.is_a?(Integer)
-        [outputs].pack("c*")
-      else
-        raise data_type_error
-      end
-
-    additional_read_bytes.times { self.outputs += "\0" }
-
-    __write(self.outputs)
-    __read(self.outputs.size)
+    raise not_inplemented_error('SPI#transfer')
   end
 
   def data_type_error
     TypeError.new("wrong argument type (expected Integer or String or Array<String>)")
+  end
+
+  def not_inplemented_error(name)
+    NotImplementedError.new("'#{name}' is not implemented")
   end
 end

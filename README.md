@@ -16,19 +16,18 @@ Add the line below to your `build_config.rb`:
 
 ```ruby
 spi = SPI.new
-spi = SPI.new(unit: 1, mode: 0, frequency:10_000_000, first_bit: SPI::MSB_FIRST)
+s = spi.transfer([0x30, 0x20], 1)
 
+spi = SPI.new(unit: 1, mode: 0, frequency:10_000_000, first_bit: SPI::MSB_FIRST)
 spi.setmode(unit: 1, mode: 0, frequency:10_000_000, first_bit: SPI::MSB_FIRST)
 
+# NOT IMPLEMENTED
 spi.write(0x30, 0x20, 0x00)
 spi.write("\x30\xa2")
 spi.write(0x30)
 
 # NOT IMPLEMENTED
 data = spi.read( 32 )
-
-# NOT IMPLEMENTED
-s = spi.transfer([0x30, 0x20], 1)
 ```
 
 ## LICENSE
